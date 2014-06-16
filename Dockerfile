@@ -11,13 +11,19 @@ ADD keybindings.tmux /.byobu/keybindings.tmux
 ENV VERSION 1.2.2
 ENV OS linux
 ENV ARCH amd64
-RUN wget http://golang.org/dl/go$VERSION.$OS-$ARCH.tar.gz
+RUN wget -q http://golang.org/dl/go$VERSION.$OS-$ARCH.tar.gz
 RUN tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 ENV PATH $PATH:/usr/local/go/bin
 
-# golang test
-ADD hello.go hello.go
-RUN go run hello.go
+# git and development tols
+RUN apt-get -y install git
+RUN apt-get -y install vim
+RUN apt-get -y install cgdb
+
+# golang env
+ENV GOPATH /root/go
+ENV PATH $PATH:$GOPATH/bin
+WORKDIR /root/go/src
 
 # shell launch
 CMD ["/usr/bin/byobu"]
