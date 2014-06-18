@@ -1,6 +1,8 @@
 FROM jordi/docker-devel
 MAINTAINER Jordi Inyigo
 
+RUN apt-get -y update
+
 # golang install
 ENV VERSION 1.2.2
 ENV OS linux
