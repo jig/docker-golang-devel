@@ -4,7 +4,7 @@ MAINTAINER Jordi Inyigo
 RUN apt-get -y update
 
 # golang install
-ENV VERSION 1.2.2
+ENV VERSION 1.3
 ENV OS linux
 ENV ARCH amd64
 RUN wget -q http://golang.org/dl/go$VERSION.$OS-$ARCH.tar.gz
