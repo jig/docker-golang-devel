@@ -1,0 +1,23 @@
+docker-golang-devel
+===================
+
+Go language development container (golang) that includes LiteIDE.
+
+Versions:
+
+- Go 1.3
+- LiteIDE x22
+
+Run
+---
+
+You need to run it locally (DOCKER_HOST must be in your host) in a system with XWindows (XWindows Server).
+
+    
+
+Pull
+----
+
+
+Build
+-----
