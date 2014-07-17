@@ -1,4 +1,4 @@
-<WARNING: Not working yet: Currently LiteIDE launches, BUT debugging is not working>
+_WARNING_: Not working yet: Currently LiteIDE launches, BUT debugging is not working
 
 docker-golang-devel
 ===================
