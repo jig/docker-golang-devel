@@ -1,7 +1,9 @@
+<WARNING: Not working yet: Currently LiteIDE launches, BUT debugging is not working>
+
 docker-golang-devel
 ===================
 
-Go language development container (golang) that includes Go and LiteIDE.
+Go language development container (golang) that includes Go compiler and tools and LiteIDE.
 
 Softare versions:
 
@@ -11,17 +13,19 @@ Softare versions:
 Run
 ---
 
-This is works when the container resides in your same workstation (docker client and server are on the same system).
+The container must reside in your workstation (so docker client and server are on the same host).
 
-You need to run it in a system with XWindows (XWindows Server). To run it, first allow root user to access your display with:
+You need to run it in a system with XWindows (XWindows Server). 
+
+First allow root to access your display with:
 
     xhost + SI:localuser:root
 
-you need to do this because now root, that runs docker daemon, must be able to access your XWindows session. 
+you need to do this because root runs docker daemon, and docker (this container) must be able to access your XWindows session. 
 
-Now you can launch the Go IDE, LiteIDE. You must share your DISPLAY environment variable (usually ":0", "unix:0.0", etc.), and share the X11 unix socket, and your source directory. You do that with this single line (first change /<user-home-dir>/go with the absolute path of your src parent directory. This is the value of GOPATH env var if you had installed Go in your workstation (host)):
+Now you can launch the Go IDE, LiteIDE. You must share your DISPLAY environment variable (usually `:0`, `unix:0.0`, etc.), and share the X11 unix socket, and your source directory. You do that with the single line below (change `/<user-home-dir>/go` with the absolute path of your src parent directory. This is the value of `GOPATH` env var if you had installed Go in your workstation (host)):
 
-    docker run -e "DISPLAY=$DISPLAY" -v="/tmp/.X11-unix:/tmp/.X11-unix:rw" -v "/<user-home-dir>/go:/go:rw" -ti jordi/golang
+    docker run -e "DISPLAY=$DISPLAY" -v="/tmp/.X11-unix:/tmp/.X11-unix:rw" -v="/<user-home-dir>/go:/go:rw" jordi/golang
 
 If you edit and save your source files, they will remain on your host after the container has been stopped or killed.
 
@@ -33,6 +37,6 @@ Pull
 Build
 -----
 
-git clone this project, cd into it, and:
+`git clone` this project, cd into it, and:
 
     docker build -t golang .
