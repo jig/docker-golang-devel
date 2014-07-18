@@ -4,8 +4,8 @@ MAINTAINER Jordi Íñigo
 ENV TERM linux
 RUN apt-get -y update
 
-# Download prerequisites
-RUN apt-get -y install wget bzip2 make gdb libqt4-dev
+# Download general prerequisites
+RUN apt-get -y install wget bzip2 
 
 # golang install
 ENV VERSION 1.3
@@ -16,9 +16,12 @@ RUN wget http://golang.org/dl/go$VERSION.$OS-$ARCH.tar.gz -q -O - | tar -zxf - -
 # golang env
 ENV GOPATH /go
 ENV GOROOT /usr/local/go
-ENV PATH $PATH:$GOPATH/bin
+
+# Download LiteIDE prerequisites
+RUN apt-get -y install make gdb libqt4-dev
 
 # LiteIDE
+ENV PATH $PATH:$GOROOT/bin
 RUN wget http://sourceforge.net/projects/liteide/files/X22/liteidex22.linux-64.tar.bz2 -q -O - | bunzip2 -c | tar -xf - -C /usr/local
 ADD linux64.env /usr/local/liteide/share/liteide/liteenv/linux64.env
 ADD liteide.ini /.config/liteide/liteide.ini
