@@ -39,3 +39,7 @@ Build
 
 	$ docker build -t golang .
 
+Important note
+--------------
+
+LiteIDE will save all files with root owner (since docker server runs as root)
