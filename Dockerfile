@@ -8,7 +8,7 @@ RUN apt-get -y update
 RUN apt-get -y install wget bzip2 
 
 # golang install
-ENV VERSION 1.3
+ENV VERSION 1.2.2
 ENV OS linux
 ENV ARCH amd64
 RUN wget http://golang.org/dl/go$VERSION.$OS-$ARCH.tar.gz -q -O - | tar -zxf - -C /usr/local
