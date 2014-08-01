@@ -5,8 +5,8 @@ Go language development container (golang) that includes Go compiler and tools a
 
 Softare versions:
 
-- Go 1.3
-- LiteIDE x22
+- Go 1.2.2 (it seems that Go 1.3 is not working properly for debugging https://code.google.com/p/go/issues/detail?id=8098)
+- LiteIDE x23.1
 
 Run
 ---
