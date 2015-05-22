@@ -5,7 +5,7 @@ MAINTAINER Jordi Íñigo
 RUN apt-get -y install make gdb libqt4-dev
 
 # LiteIDE
-RUN wget http://sourceforge.net/projects/liteide/files/X23.2/liteidex23.2.linux-64.tar.bz2 -q -O - | bunzip2 -c | tar -xf - -C /usr/local
+RUN wget http://heanet.dl.sourceforge.net/project/liteide/X27.2.1/liteidex27.2.1.linux-64-qt4.tar.bz2 -q -O - | bunzip2 -c | tar -xf - -C /usr/local
 ADD linux64.env /usr/local/liteide/share/liteide/liteenv/linux64.env
 ADD liteide.ini /.config/liteide/liteide.ini
 

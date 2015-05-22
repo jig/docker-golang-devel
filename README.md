@@ -5,8 +5,8 @@ Go language development container (golang) that includes Go compiler and tools a
 
 Softare versions:
 
-- Go 1.2.2 (it seems that Go 1.3 is not working properly for debugging https://code.google.com/p/go/issues/detail?id=8098)
-- LiteIDE x23.2
+- Go 1.4.2 
+- LiteIDE x27.2.1
 
 Run
 ---
@@ -30,14 +30,14 @@ If you edit and save your source files, they will remain on your host after the 
 Pull
 ----
 
-	$ docker pull jordi/golang
+	$ docker pull jordi/golang-devel
 
 Build
 -----
 
 `git clone` this project, cd into it, and:
 
-	$ docker build -t golang .
+	$ docker build -t golang-devel .
 
 Important note
 --------------
