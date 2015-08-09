@@ -30,14 +30,14 @@ If you edit and save your source files, they will remain on your host after the 
 Pull
 ----
 
-	$ docker pull jordi/golang-devel
+	$ docker pull jordi/golang
 
 Build
 -----
 
 `git clone` this project, cd into it, and:
 
-	$ docker build -t golang-devel .
+	$ docker build -t golang .
 
 Important note
 --------------
