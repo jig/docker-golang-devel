@@ -23,7 +23,7 @@ you need to do this because root runs docker daemon, and docker (this container)
 
 Now you can launch the Go IDE, LiteIDE. You must share your DISPLAY environment variable (usually `:0`, `unix:0.0`, etc.), and share the X11 unix socket, and your source directory. You must allow `--privileged` in order to let `gdb` debug. You do that with the single line below (change `/<user-home-dir>/go` with the path of your src parent directory. This is the value of `GOPATH` env var if you had installed Go in your workstation (host)):
 
-	$ docker run --rm --privileged -e DISPLAY -v=/tmp/.X11-unix:/tmp/.X11-unix -v=~/.git:/git jordi/golang
+	$ docker run --rm --privileged -e DISPLAY -e UNAME=$USER -e UID=$(id -u $USER) -e GID=$(id -g $USER) -v=/tmp/.X11-unix:/tmp/.X11-unix -v=~/:$(echo ~) jordi/golang
 
 If you edit and save your source files, they will remain on your host after the container has been stopped or killed.
 
@@ -42,4 +42,4 @@ Build
 Important note
 --------------
 
-LiteIDE will save all files with root owner (since docker server runs as root)
+LiteIDE will save all files with the UID and GID provided owner (since docker server runs as root)

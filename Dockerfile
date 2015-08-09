@@ -15,4 +15,8 @@ RUN apt-get install -y xterm
 
 # shell launch
 ENV QT_X11_NO_MITSHM 1
-CMD ["/usr/local/liteide/bin/liteide"]
+# CMD ["/usr/local/liteide/bin/liteide"]
+
+COPY start.sh /start
+RUN chmod 700 /start
+CMD ["/start"]
