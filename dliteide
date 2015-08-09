@@ -1,0 +1,6 @@
+#!/bin/bash
+#  Based on answer by Juergen Weiger at Stack Overflow entry http://stackoverflow.com/questions/16296753/can-you-run-gui-apps-in-a-docker-container
+
+XAUTH=/tmp/.docker.xauth
+xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+docker run --rm -v /tmp/.X11-unix:/tmp/.X11-unix -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH -e DISPLAY -e UNAME=$USER -e UID=$(id -u $USER) -e GID=$(id -g $USER) -v ~/:$(echo ~) jordi/golang
