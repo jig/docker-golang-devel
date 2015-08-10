@@ -3,7 +3,7 @@ docker-golang-devel
 
 Go language development container (golang) that includes Go compiler and tools and LiteIDE.
 
-Softare versions:
+Software versions:
 
 - Go 1.4.2 
 - LiteIDE x27.2.1
@@ -37,7 +37,3 @@ Build
 
 	$ docker build -t golang .
 
-Important note
---------------
-
-LiteIDE will save all files with the UID and GID provided owner (since docker server runs as root)
