@@ -5,7 +5,7 @@ Go language development container (golang) that includes Go compiler and tools a
 
 Software versions:
 
-- Go 1.4.2 
+- Go 1.5
 - LiteIDE x27.2.1
 
 Run
