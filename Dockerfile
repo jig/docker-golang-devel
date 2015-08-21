@@ -1,4 +1,4 @@
-FROM jordi/golang-run:1.5
+FROM jordi/golang-run:v1.5
 MAINTAINER Jordi Íñigo
 
 # Download LiteIDE prerequisites
